@@ -21,6 +21,10 @@ The original normalized partial AUC (`pauc`) divides the ROC area below FPR 0.1 
 
 The selective-review planner fits thresholds on source normals under a declared anomaly-rank scenario and assumes perfect review. The strengthened reference matches the policy's achieved review rate `q` and costs `(1 - q) * min(always_pass, always_alert) + q * review_cost`. Budget overruns are recorded separately. Frequency-band CART rules are fitted on source data and audited on target normals. Case labels describe spectral evidence without establishing the physical cause of an individual error.
 
+## Local evidence repair
+
+See [the evidence repair report](EVIDENCE_REPAIR.md) for the post-hoc analysis, inputs, limits and commands. The original public baseline stays under `results/` and the repair writes to `audit_outputs/`.
+
 ## Reproduce
 
 The measured run used Python 3.13.16 and PyTorch 2.11.0 with CUDA 12.8 on a GTX 1650 Ti. The published [valve ledger](results/valve/predictions_clip_level.csv) and [fan ledger](results/fan/predictions_clip_level.csv) support offline CSV verification. Official WAVs are also required to regenerate the case spectrograms.

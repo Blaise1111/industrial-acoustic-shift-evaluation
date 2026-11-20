@@ -1,0 +1,36 @@
+{
+  "baseline": "baf1a8f",
+  "commands": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest -q",
+      "exit_code": 0,
+      "result": "19 passed",
+      "local_log": "prepublish_tests.log"
+    },
+    {
+      "command": ".venv/Scripts/python.exe scripts/reaudit_ledger.py --output audit_outputs/acoustic_prepublish_check",
+      "exit_code": 0,
+      "result": "1,620 scenario rows and 24 threshold comparisons; CSVs match stored audit at 1e-7",
+      "local_log": "prepublish_recompute.log"
+    },
+    {
+      "command": ".venv/Scripts/python.exe scripts/run_all_experiments.py --machine fan --verify-csv",
+      "exit_code": 0,
+      "result": "Five historical CSVs pass 1e-7",
+      "local_log": "prepublish_verify_fan.log"
+    },
+    {
+      "command": ".venv/Scripts/python.exe scripts/run_all_experiments.py --machine valve --verify-csv",
+      "exit_code": 0,
+      "result": "Five historical CSVs pass 1e-7",
+      "local_log": "prepublish_verify_valve.log"
+    }
+  ],
+  "checks": [
+    "35 prior input/evidence digests match",
+    "README and evidence links resolve"
+  ],
+  "limits": [
+    "Post-hoc analysis from saved scores; human review quality and prevalence are scenario assumptions"
+  ]
+}

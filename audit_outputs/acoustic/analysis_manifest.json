@@ -1,0 +1,40 @@
+{
+  "analysis": "post_hoc_offline",
+  "baseline": "baf1a8f",
+  "ledger_sha256": {
+    "fan": "ba943f8b9ce3d66d30c310fc6200d83e35c61a5406f9d15675bf797217f3dc8e",
+    "valve": "f1590557b90ed0e1cf64bbe1b384d896f97195642900d42bcf5cdf4d6d005733"
+  },
+  "parameters": {
+    "seed": 2027,
+    "bootstrap_replicates": 2000,
+    "source_proxy_replicates": 100,
+    "source_fit_fraction": 0.6,
+    "prevalences": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "false_negative_costs": [
+      5,
+      10,
+      20
+    ],
+    "review_quality": {
+      "perfect": {
+        "sensitivity": 1.0,
+        "specificity": 1.0
+      },
+      "balanced_90": {
+        "sensitivity": 0.9,
+        "specificity": 0.9
+      },
+      "asymmetric": {
+        "sensitivity": 0.8,
+        "specificity": 0.95
+      }
+    },
+    "focus_budget": 0.2
+  },
+  "scope": "M2 ensemble q90; frozen source-only planning"
+}

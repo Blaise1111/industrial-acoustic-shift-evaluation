@@ -1,0 +1,17 @@
+[
+  {
+    "command": ".venv/Scripts/python.exe scripts/run_all_experiments.py --machine fan --verify-csv",
+    "exit_code": 0,
+    "log": "baseline/fan_verify.log"
+  },
+  {
+    "command": ".venv/Scripts/python.exe scripts/run_all_experiments.py --machine valve --verify-csv",
+    "exit_code": 0,
+    "log": "baseline/valve_verify.log"
+  },
+  {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "exit_code": 0,
+    "log": "baseline/legacy_tests.log"
+  }
+]

@@ -30,3 +30,7 @@ __pycache__/
 /results/p1_*.csv
 /results/predictions_clip_level.csv
 /figs/fig[1-4]_*.png
+
+# Local diagnostic logs and generated verification-only copies
+/audit_outputs/**/*.log
+/audit_outputs/acoustic_prepublish_check/

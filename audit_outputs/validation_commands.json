@@ -1,0 +1,14 @@
+[
+  {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "exit_code": 0,
+    "result": "19 passed",
+    "local_log": "tests.log"
+  },
+  {
+    "command": ".venv/Scripts/python.exe scripts/reaudit_ledger.py --output audit_outputs/acoustic",
+    "exit_code": 0,
+    "result": "1,620 scenario rows and 24 fixed-threshold comparisons, historical perfect-review overlap checked",
+    "local_log": "acoustic_recompute.log"
+  }
+]
